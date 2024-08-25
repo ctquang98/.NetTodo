@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using TodoProject.Attributes;
+using TodoProject.Helpers;
 using TodoProject.Models.DTOs;
 using TodoProject.Services;
 
@@ -6,6 +8,7 @@ namespace TodoProject.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [CardLogAttribute]
     public class CardController : Controller
     {
         private readonly CardLabelSerivce cardLabelSerivce;

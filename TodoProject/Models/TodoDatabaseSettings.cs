@@ -9,5 +9,6 @@
         public string LabelsCollectionName { get; set; }
         public string CardLabelCollectionName { get; set; }
         public string CommentCollectionName { get; set; }
+        public string RolesCollectionName { get; set; }
     }
 }

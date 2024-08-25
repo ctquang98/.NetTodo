@@ -27,6 +27,10 @@ builder.Services.AddSingleton<CardService>();
 builder.Services.AddSingleton<LabelService>();
 builder.Services.AddSingleton<CardLabelSerivce>();
 builder.Services.AddSingleton<CommentService>();
+builder.Services.AddSingleton<RoleService>();
+
+builder.Logging.ClearProviders();
+builder.Logging.AddConsole();
 
 builder.Services.AddAuthentication(options =>
 {

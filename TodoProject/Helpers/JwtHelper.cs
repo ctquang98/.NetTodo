@@ -28,6 +28,15 @@ namespace TodoProject.Helpers
                 new Claim(ClaimTypes.NameIdentifier, user.Id),
                 new Claim(ClaimTypes.Name, user.Username),
             };
+
+            foreach (var role in user.Roles)
+            {
+                if (!string.IsNullOrWhiteSpace(role?.Name))
+                {
+                    claims.Add(new Claim(ClaimTypes.Role, role.Name));
+                }
+            }
+
             var token = new JwtSecurityToken(
                 issuer: issuer,
                 audience: audience,
