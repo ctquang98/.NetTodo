@@ -1,4 +1,5 @@
-﻿using MongoDB.Bson;
+﻿using Microsoft.VisualBasic;
+using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
 namespace TodoProject.Models
@@ -12,6 +13,10 @@ namespace TodoProject.Models
         public string Name { get; set; }
         [BsonElement("description")]
         public string Description { get; set; }
+
+        [BsonElement("due_date")]
+        public DateTime DueDate { get; set; }
+
         public List<Label> labels { get; set; } = new List<Label>();
 
         //public List<string> commentIds { get; set; } = new List<string>();

@@ -74,5 +74,10 @@ namespace TodoProject.Services
             var findFluent = cardsCollection.Find(filter).Sort(sorter);
             return await AppPagination<Card>.HandlePagination(findFluent, _params.Page, _params.PageSize);
         }
+
+        public async Task<List<Card>> GetCardBeforeDate(DateTime date)
+        {
+            return await cardsCollection.Find(x => x.DueDate < date).ToListAsync();
+        }
     }
 }

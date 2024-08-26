@@ -6,6 +6,7 @@ using Microsoft.OpenApi.Models;
 using System.Text;
 using TodoProject.models;
 using TodoProject.Services;
+using TodoProject.Workers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,6 +29,9 @@ builder.Services.AddSingleton<LabelService>();
 builder.Services.AddSingleton<CardLabelSerivce>();
 builder.Services.AddSingleton<CommentService>();
 builder.Services.AddSingleton<RoleService>();
+
+//builder.Services.AddHostedService<TestWorker>();
+builder.Services.AddHostedService<ReminderWorker>();
 
 builder.Logging.ClearProviders();
 builder.Logging.AddConsole();
